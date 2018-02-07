@@ -42,15 +42,17 @@ console.log(liriCommand);
 
 if (liriCommand === "my-tweets") {
     console.log("Inside the if: my-tweets");
-    var tweetsToGet = 100;
+    //var tweetsToGet = 100;
     var params = { screen_name: 'Eneg Allenac', count: 20 };
     client.get('statuses/user_timeline', params, function(error, tweets, response) {
         if (!error) {
             //console.log(tweets);
-            if (tweets.length < tweetsToGet) {
-                tweetsToGet = tweets.length;
-            }
-            for (var i = 0; i < tweetsToGet; i++) {
+            //if (tweets.length < tweetsToGet) {
+            //tweetsToGet = tweets.length;
+            //}
+
+            //for (var i = 0; i < tweetsToGet; i++) {tweets.length
+            for (var i = 0; i < tweets.length; i++) {
                 console.log(tweets[i].text);
             }
         }
