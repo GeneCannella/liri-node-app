@@ -61,6 +61,77 @@ if (liriCommand === "my-tweets") {
 
 } else if (liriCommand === "spotify-this-song") {
     console.log("Inside the if: spotify-this-song");
+    spotify.search({ type: 'track', query: 'All the Small Things', limit: 1}, function(err, data) {
+        if (err) {
+            return console.log('Error occurred: ' + err);
+        }
+
+        //digging down to find the data for this particular track
+        console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        console.log("data");
+        console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        console.log(data);
+
+        console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        console.log("data.tracks");
+        console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        console.log(data.tracks);
+
+        console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        console.log("data.tracks.items");
+        console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        console.log(data.tracks.items);  
+
+        console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        console.log("data.tracks.items[0]");
+        console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        console.log(data.tracks.items[0]);
+
+        //digging down to get the artists info
+        console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        console.log("data.tracks.items[0].artists");
+        console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        console.log(data.tracks.items[0].artists);
+
+        console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        console.log("data.tracks.items[0].artists[0].name");
+        console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        console.log(data.tracks.items[0].artists[0].name);
+
+        //digging down to get the song name
+        console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        console.log("data.tracks.items[0].name");
+        console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        console.log(data.tracks.items[0].name);
+
+        //digging down to get the preview url
+        console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        console.log("data.tracks.items[0].external_urls");
+        console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        console.log(data.tracks.items[0].external_urls); 
+
+        console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        console.log("data.tracks.items[0].external_urls.spotify");
+        console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        console.log(data.tracks.items[0].external_urls.spotify);  
+
+        //digging down to get the album name
+        console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        console.log("data.tracks.items[0].album");
+        console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        console.log(data.tracks.items[0].album);
+
+        console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        console.log("data.tracks.items[0].album.name");
+        console.log("~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
+        console.log(data.tracks.items[0].album.name);
+        
+    });
+
+
+
+
+
 } else if (liriCommand === "movie-this") {
     console.log("Inside the if: movie-this");
 } else if (liriCommand === "do-what-it-says") {
